@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public class UsersController {
 
-    @Autowired
-    UsersRepository usersRepository;
-    @PostMapping
-    public User register(@RequestBody User user) {
-        usersRepository.save(user);
-        return user;
-    }
+//    @Autowired
+//    UsersRepository usersRepository;
+//    @PostMapping
+//    public User register(@RequestBody User user) {
+//        usersRepository.save(user);
+//        return user;
+//    }
 }
