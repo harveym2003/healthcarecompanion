@@ -1,4 +1,4 @@
-package com.r7.rad.hhcc.data;
+package com.r7.rad.hhcc.data.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

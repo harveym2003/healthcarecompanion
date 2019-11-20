@@ -1,23 +1,32 @@
 package com.r7.rad.hhcc.controllers;
 
 import com.r7.rad.hhcc.ApplicationConstants;
-//import com.r7.rad.hhcc.data.dto.User;
-//import com.r7.rad.hhcc.data.dto.UserDTO;
-//import com.r7.rad.hhcc.data.repository.UsersRepository;
+import com.r7.rad.hhcc.data.dto.DoctorsDTO;
+import com.r7.rad.hhcc.data.model.Doctors;
+import com.r7.rad.hhcc.data.repository.DoctorsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
+
+
 @RestController
 @RequestMapping(ApplicationConstants.URL_ACCOUNT)
-public class UsersController {
+public class DoctorsController {
 
-//    @Autowired
-//    private UsersRepository usersRepository;
+    @Autowired
+    private DoctorsRepository doctorsRepository;
 //    @Autowired
 //    private UserService userService;
 
-//    @RequestMapping(value = "/register", method = RequestMethod.POST)
-//    public User register(@RequestBody UserDTO userDTO, HttpServletRequest request) {
+    @RequestMapping(value = "/getDoctors", method = RequestMethod.GET)
+    public List<DoctorsDTO> getDoctors(String specialization, String city, HttpServletRequest request) {
+        List<DoctorsDTO> doctors = new ArrayList<DoctorsDTO>();
+        doctors = doctorsRepository.findDoctorsByCityAndSpecialization(city, specialization);
+        return doctors;
+    }
 //        return Optional.ofNullable(usersRepository.findByEmailAddressIgnoreCase(userDTO.getEmailAddress()))
 //                .map(user -> new ResponseEntity("Email address already in use ", HttpStatus.BAD_REQUEST))
 //                .orElseGet(() -> {

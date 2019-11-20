@@ -1,4 +1,4 @@
-package com.r7.rad.hhcc.data;
+package com.r7.rad.hhcc.data.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -16,9 +16,18 @@ public class Doctors {
     private String services;
     private String schedule;
     private String address;
+    private String city;
+    private String specialization;
 
-    @DBRef
-    private List doctorSpecialty;
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
+//    @DBRef
+//    private List doctorSpecialty;
 
     public String getId() {
         return id;
@@ -68,13 +77,20 @@ public class Doctors {
         this.address = address;
     }
 
-    public List getDoctorSpecialty() {
-        return doctorSpecialty;
+//    public List getDoctorSpecialty() {
+//        return doctorSpecialty;
+//    }
+//
+//    public void setDoctorSpecialty(List doctorSpecialty) {
+//        this.doctorSpecialty = doctorSpecialty;
+//    }
+
+    public String getCity() {
+        return city;
     }
 
-    public void setDoctorSpecialty(List doctorSpecialty) {
-        this.doctorSpecialty = doctorSpecialty;
+    public void setCity(String city) {
+        this.city = city;
     }
-
 
 }
