@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(ApplicationConstants.URL_ACCOUNT)
+//@RequestMapping(ApplicationConstants.URL_ACCOUNT)
 public class UsersController {
 
 //    @Autowired

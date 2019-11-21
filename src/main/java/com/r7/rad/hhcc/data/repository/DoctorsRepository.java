@@ -5,10 +5,12 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.repository.NoRepositoryBean;
 import com.r7.rad.hhcc.data.dto.DoctorsDTO;
 import com.r7.rad.hhcc.data.model.Doctors;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
-@NoRepositoryBean
-public interface DoctorsRepository extends MongoRepository {
+
+public interface DoctorsRepository extends MongoRepository<Doctors, String> {
 
     @Query(value = "{'doctors.city': ?0}", fields = "{'doctors' : 0}")
     List<DoctorsDTO> findDoctorsByCityAndSpecialization(String city, String specialization);
