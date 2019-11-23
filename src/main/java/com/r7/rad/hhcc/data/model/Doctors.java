@@ -15,9 +15,11 @@ public class Doctors {
     private String details;
     private String services;
     private String schedule;
+
     private String address;
     private String city;
     private String specialization;
+    private String phoneNumber;
 
     public String getSpecialization() {
         return specialization;
@@ -92,5 +94,13 @@ public class Doctors {
     public void setCity(String city) {
         this.city = city;
     }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
 
 }

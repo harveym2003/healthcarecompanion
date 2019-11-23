@@ -25,7 +25,7 @@ public class DoctorsController {
     private DoctorsRepositoryCustom doctorsRepositoryCustom;
 
     @RequestMapping(value = "/getDoctors", method = RequestMethod.GET)
-    public List<DoctorsDTO> getDoctors(String specialization, String city, HttpServletRequest request) {
+    public List<DoctorsDTO> getDoctors(String specialization, String city) {
         List<DoctorsDTO> doctors = new ArrayList<DoctorsDTO>();
         doctors = this.doctorsRepository.findDoctorsByCityAndSpecialization(city, specialization);
         return doctors;
