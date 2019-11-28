@@ -11,6 +11,8 @@ public final class ApplicationConstants {
     public static final String SPRING_PROFILE_DEVELOPMENT = "dev";
     public static final String URL_ACCOUNT = "/rest/api/v1/account";
     public static final String URL_DOCTORS = "/rest/api/v1/doctors";
+    public static final String URL_PHARMACIES = "/rest/api/v1/pharmacies";
+    public static final String URL_HOSPITALS = "/rest/api/v1/hospitals";
     public static final String URL_SERVICES = "/rest/api/v1/service";
     public static final String URL_LOCATION = "/rest/api/v1/location";
 

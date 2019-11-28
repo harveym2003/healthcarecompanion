@@ -1,13 +1,9 @@
 package com.r7.rad.hhcc.data.dto;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
-
 @Document("Doctors")
-public class DoctorsDTO {
+public class HospitalsDTO {
 
     private String name;
     private String details;
@@ -15,7 +11,6 @@ public class DoctorsDTO {
     private String schedule;
     private String address;
     private String city;
-    private String specialization;
     private String phoneNumber;
 
     public String getName() {
@@ -64,14 +59,6 @@ public class DoctorsDTO {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getSpecialization() {
-        return specialization;
-    }
-
-    public void setSpecialization(String specialization) {
-        this.specialization = specialization;
     }
 
     public String getPhoneNumber() {
