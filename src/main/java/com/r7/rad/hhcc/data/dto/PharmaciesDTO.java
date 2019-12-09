@@ -2,7 +2,7 @@ package com.r7.rad.hhcc.data.dto;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("Doctors")
+@Document("Pharmacies")
 public class PharmaciesDTO {
 
     private String name;

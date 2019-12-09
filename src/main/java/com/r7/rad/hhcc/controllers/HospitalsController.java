@@ -27,12 +27,12 @@ public class HospitalsController {
     @RequestMapping(value = "/getHospitals", method = RequestMethod.GET)
     public List<HospitalsDTO> getHospitals(String city) {
         List<HospitalsDTO> hospitals = new ArrayList<HospitalsDTO>();
-        hospitals = this.hospitalRepository.findDoctorsByCity(city);
+        hospitals = this.hospitalRepository.findHospitalsByCity(city);
         return hospitals;
     }
 
     @RequestMapping(value = "/getAllHospitals", method = RequestMethod.GET)
-    public List<HospitalsDTO> getAllDoctors() {
+    public List<HospitalsDTO> getAllHospitals() {
         System.out.println("getting hospitals' details.......... in progress ");
         List<HospitalsDTO> hospitals = new ArrayList<HospitalsDTO>();
         hospitals = this.hospitalRepository.findAll();
@@ -41,12 +41,12 @@ public class HospitalsController {
     }
 
     @PostMapping(value = "/insertHospitals")
-    public void insertDoctors(@RequestBody List<HospitalsDTO> hospitals) {
+    public void insertHospitals(@RequestBody List<HospitalsDTO> hospitals) {
         this.hospitalRepository.insert(hospitals);
     }
 
     @PostMapping(value = "/insertHospital")
-    public void insertHospitals(@RequestBody HospitalsDTO hospitals) {
+    public void insertHospital(@RequestBody HospitalsDTO hospitals) {
         this.hospitalRepository.insert(hospitals);
     }
 

@@ -13,7 +13,9 @@ import java.util.List;
 public interface DoctorsRepository extends MongoRepository<Doctors, String> {
 
 //    @Query(value = "{'doctors.city': ?0}", fields = "{'doctors' : 0}")
-    List<DoctorsDTO> findDoctorsByCityAndSpecialization(String city, String specialization);
+    List<DoctorsDTO> findDoctorsByCityAndSpecializationLike(String city, String specialization);
+
+//    List<DoctorsDTO> updateDoctors(String details, String specialization);
 
 //    List findDoctorsByDoctorSpecialty(String name);
 }

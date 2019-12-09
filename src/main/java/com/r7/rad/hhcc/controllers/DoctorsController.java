@@ -6,6 +6,9 @@ import com.r7.rad.hhcc.data.model.Doctors;
 import com.r7.rad.hhcc.data.repository.DoctorsRepository;
 import com.r7.rad.hhcc.data.repository.DoctorsRepositoryCustom;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +30,7 @@ public class DoctorsController {
     @RequestMapping(value = "/getDoctors", method = RequestMethod.GET)
     public List<DoctorsDTO> getDoctors(String specialization, String city) {
         List<DoctorsDTO> doctors = new ArrayList<DoctorsDTO>();
-        doctors = this.doctorsRepository.findDoctorsByCityAndSpecialization(city, specialization);
+        doctors = this.doctorsRepository.findDoctorsByCityAndSpecializationLike(city, specialization);
         return doctors;
     }
 
@@ -49,6 +52,11 @@ public class DoctorsController {
     public void insertDoctors(@RequestBody Doctors doctors) {
         this.doctorsRepository.insert(doctors);
     }
+
+//    @PostMapping(value = "/updateDoctors")
+//    public void updateDoctors(@RequestBody Doctors doctors) {
+//        //show the use of $or operator
+//    }
 
 //        return Optional.ofNullable(usersRepository.findByEmailAddressIgnoreCase(userDTO.getEmailAddress()))
 //                .map(user -> new ResponseEntity("Email address already in use ", HttpStatus.BAD_REQUEST))
